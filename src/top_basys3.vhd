@@ -36,6 +36,8 @@ architecture top_basys3_arch of top_basys3 is
     signal reset_clkdiv : std_logic;
     signal reset_fsm_clk : std_logic;
     signal tdm_clk : std_logic;
+    signal slow1 : std_logic;
+    signal slow2 : std_logic;
   
 	-- component declarations
     component sevenseg_decoder is
@@ -142,8 +144,8 @@ begin
         i_clk => tdm_clk,
         i_reset => master_reset,
         i_D0 => o_seg1,
-        i_D1 => o_seg2,
-        i_D2 => "0001110",
+        i_D1 => "0001110",
+        i_D2 => o_seg2,
         i_D3 => "0001110",
         o_data => seg,
         o_sel => an
